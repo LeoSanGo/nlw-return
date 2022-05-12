@@ -1,9 +1,12 @@
+import React from 'react';
+import 'react-native-gesture-handler';
+
 import { StatusBar } from 'expo-status-bar';
 import { View } from 'react-native';
-import { Widget } from './src/components/Widget';
+import  Widget  from './src/components/Widget'
 import { theme } from './src/theme';
 import AppLoading from 'expo-app-loading';
-import React from 'react';
+import * as SplashScreen from 'expo-splash-screen';
 import {
   useFonts,
   Inter_400Regular,
@@ -11,6 +14,7 @@ import {
 } from '@expo-google-fonts/inter';
 
 export default function App() {
+  SplashScreen.preventAutoHideAsync();
   const [fontsLoaded] = useFonts({
     Inter_400Regular,
     Inter_500Medium,
@@ -19,6 +23,7 @@ export default function App() {
   if (!fontsLoaded) {
     return <AppLoading />;
   }
+  SplashScreen.hideAsync();
   return (
     <View
       style={{
