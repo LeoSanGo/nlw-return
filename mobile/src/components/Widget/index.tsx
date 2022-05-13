@@ -1,11 +1,13 @@
 import React, { useRef } from 'react';
 import 'react-native-gesture-handler';
 import { View, TouchableOpacity } from 'react-native';
-import { styles } from './styles';
+import { Options } from '../Options';
 import { ChatTeardropDots } from 'phosphor-react-native';
-import { theme } from '../../theme';
 import BottomSheet from '@gorhom/bottom-sheet';
 import { gestureHandlerRootHOC } from 'react-native-gesture-handler';
+
+import { theme } from '../../theme';
+import { styles } from './styles';
 
 function Widget() {
   const bottomSheetRef = useRef<BottomSheet>(null);
@@ -24,7 +26,13 @@ function Widget() {
         />
       </TouchableOpacity>
 
-      <BottomSheet ref={bottomSheetRef} snapPoints={[1, 280]}></BottomSheet>
+      <BottomSheet 
+        ref={bottomSheetRef} 
+        snapPoints={[1, 280]} 
+        handleIndicatorStyle={styles.indicator}
+      >
+        <Options />
+      </BottomSheet>
     </>
   );
 }
