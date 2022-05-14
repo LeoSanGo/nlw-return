@@ -8,6 +8,9 @@ import { gestureHandlerRootHOC } from 'react-native-gesture-handler';
 
 import { theme } from '../../theme';
 import { styles } from './styles';
+import { feedbackTypes } from '../../utils/feedbackTypes';
+
+export type FeedbackType = keyof typeof feedbackTypes;
 
 function Widget() {
   const bottomSheetRef = useRef<BottomSheet>(null);
