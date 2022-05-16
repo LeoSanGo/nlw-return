@@ -3,7 +3,7 @@ import 'react-native-gesture-handler';
 
 import { StatusBar } from 'expo-status-bar';
 import { View } from 'react-native';
-import  Widget  from './src/components/Widget'
+import Widget from './src/components/Widget';
 import { theme } from './src/theme';
 import AppLoading from 'expo-app-loading';
 import * as SplashScreen from 'expo-splash-screen';
@@ -25,14 +25,16 @@ export default function App() {
   }
   SplashScreen.hideAsync();
   return (
-    <View
-      style={{
-        flex: 1,
-        backgroundColor: theme.colors.background,
-      }}
-    >
-      <StatusBar style="light" backgroundColor="transparent" translucent />
-      <Widget />
-    </View>
+    <React.Fragment>
+      <View
+        style={{
+          flex: 1,
+          backgroundColor: theme.colors.background,
+        }}
+      >
+        <StatusBar style="light" backgroundColor="transparent" translucent />
+        <Widget />
+      </View>
+    </React.Fragment>
   );
 }
