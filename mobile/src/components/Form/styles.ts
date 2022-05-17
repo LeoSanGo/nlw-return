@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   header: {
-    flexdirection: 'row',
+    flexDirection: 'row',
     marginVertical: 16,
   },
   titleContainer: {
